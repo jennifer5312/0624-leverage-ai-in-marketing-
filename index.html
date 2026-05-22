@@ -472,21 +472,18 @@ function updateRegPill(text) {
 
 async function fetchDoc() {
   const tsEl = document.getElementById('updated-ts');
-  document.getElementById('content-slides').classList.add('loading');
-  document.getElementById('content-slides').textContent = '正在同步最新內容...';
   try {
     const res = await fetch(SCRIPT_URL);
     const data = await res.json();
     const raw = data.content || '';
 
     const sections = {
-      slides: parseSection(raw, '講座資料提醒'),
       zh: parseSection(raw, '活動資訊'),
       en: parseSection(raw, 'Event Detail'),
       reg: parseSection(raw, '報名人數更新')
     };
 
-    ['slides','zh','en'].forEach(k => {
+    ['zh','en'].forEach(k => {
       const el = document.getElementById('content-' + k);
       if (el) { el.classList.remove('loading'); el.textContent = sections[k] || DEFAULT[k]; }
     });
@@ -496,7 +493,7 @@ async function fetchDoc() {
     const t = new Date(data.updated);
     tsEl.textContent = '最後同步：' + t.toLocaleString('zh-TW');
   } catch(e) {
-    ['slides','zh','en'].forEach(k => {
+    ['zh','en'].forEach(k => {
       const el = document.getElementById('content-' + k);
       if (el) { el.classList.remove('loading'); el.textContent = DEFAULT[k]; }
     });
