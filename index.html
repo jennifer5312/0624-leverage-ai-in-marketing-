@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>解鎖 AI 行銷爆發力｜活動素材中心 — Enspyre 安石國際</title>
-<meta name="description" content="AI 行銷實戰講座 × 2026 AI TAIWAN，6 月 24 日圓山花博，座位限量 50 個。">
+<meta name="description" content="AI 行銷實戰講座 × 2026 AI TAIWAN，6 月 24 日圓山花博，座位限量 50 個。內部活動素材共享頁面。">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   :root {
     --bg: #F7F5F0;
     --surface: #FFFFFF;
@@ -26,7 +27,11 @@
     --cal-bg: #F0F5FF;
     --cal-border: #D6E4FF;
     --cal-text: #1D3FAA;
+    --deadline-bg: #FFF8ED;
+    --deadline-border: #F5D9A8;
+    --deadline-text: #92500A;
   }
+
   body {
     background: var(--bg);
     color: var(--text-primary);
@@ -36,7 +41,6 @@
     line-height: 1.7;
   }
 
-  /* topbar */
   .topbar {
     position: sticky; top: 0; z-index: 100;
     background: rgba(247,245,240,0.92);
@@ -46,123 +50,84 @@
     display: flex; align-items: center; justify-content: space-between;
   }
   .topbar-brand { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); }
-  .topbar-badge {
-    display: flex; align-items: center; gap: 6px;
-    font-size: 11px; color: var(--success-text);
-    background: var(--success-bg); padding: 3px 10px; border-radius: 20px;
-  }
-  .topbar-badge .dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--success-text); animation: pulse 2.5s infinite;
-  }
+  .topbar-badge { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--success-text); background: var(--success-bg); padding: 3px 10px; border-radius: 20px; }
+  .topbar-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--success-text); animation: pulse 2.5s infinite; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
-  /* hero */
   .hero { padding: 4rem 2rem 3rem; max-width: 780px; margin: 0 auto; }
   .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
   .hero-title { font-family: 'Noto Serif TC', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 600; line-height: 1.25; color: var(--text-primary); margin-bottom: 1.5rem; }
-  .hero-title span { border-bottom: 2px solid var(--text-primary); padding-bottom: 2px; }
-  .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1.25rem; align-items: center; }
-  .meta-tag {
-    font-size: 12px; background: var(--tag-bg); color: var(--text-secondary);
-    padding: 5px 12px; border-radius: 20px; display: flex; align-items: center; gap: 5px;
-  }
-
+  .hero-title span { border-bottom: 2px solid var(--text-primary); padding-bottom: 1px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2rem; }
+  .meta-tag { font-size: 12px; background: var(--tag-bg); color: var(--text-secondary); padding: 5px 12px; border-radius: 20px; display: flex; align-items: center; gap: 5px; }
   .hero-desc { font-size: 15px; color: var(--text-secondary); max-width: 560px; line-height: 1.8; margin-bottom: 2rem; }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: var(--text-primary); color: #fff;
-    font-size: 13px; font-weight: 500; padding: 10px 20px; border-radius: 6px;
-    text-decoration: none; transition: opacity 0.15s; border: none; cursor: pointer;
-    font-family: 'Noto Sans TC', sans-serif;
-  }
-  .btn-primary:hover { opacity: 0.78; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 6px; background: var(--text-primary); color: #fff; font-size: 13px; font-weight: 500; padding: 10px 20px; border-radius: 6px; text-decoration: none; transition: opacity 0.15s; border: none; cursor: pointer; font-family: 'Noto Sans TC', sans-serif; }
+  .btn-primary:hover { opacity: 0.8; }
 
   .divider { max-width: 780px; margin: 0 auto; border: none; border-top: 0.5px solid var(--border); }
-  .section-title { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 0.5rem; font-size: 13px; font-weight: 500; color: var(--text-secondary); letter-spacing: 0.04em; }
 
-  /* tabs */
-  .tabs-wrap { max-width: 780px; margin: 0 auto; padding: 0.75rem 2rem 0; }
+  .tabs-wrap { max-width: 780px; margin: 0 auto; padding: 2rem 2rem 0; }
   .tabs { display: flex; gap: 4px; flex-wrap: wrap; border-bottom: 0.5px solid var(--border); }
-  .tab-btn {
-    font-size: 13px; font-weight: 400; padding: 8px 16px;
-    border: none; background: transparent; color: var(--text-muted);
-    cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -0.5px;
-    transition: color 0.15s, border-color 0.15s;
-    font-family: 'Noto Sans TC', sans-serif; white-space: nowrap;
-  }
+  .tab-btn { font-size: 13px; font-weight: 400; padding: 8px 16px; border: none; background: transparent; color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -0.5px; transition: color 0.15s, border-color 0.15s; font-family: 'Noto Sans TC', sans-serif; white-space: nowrap; }
   .tab-btn.active { color: var(--text-primary); border-bottom-color: var(--text-primary); font-weight: 500; }
   .tab-btn:hover:not(.active) { color: var(--text-secondary); }
 
-  .content-wrap { max-width: 780px; margin: 0 auto; padding: 1.5rem 2rem 2rem; }
+  .content-wrap { max-width: 780px; margin: 0 auto; padding: 2rem; }
 
-  /* download panel */
-  .download-panel {
-    background: var(--surface); border: 0.5px solid var(--border);
-    border-radius: 10px; padding: 2rem;
-    flex-direction: column; align-items: flex-start; gap: 1rem;
-    display: none;
-  }
+  /* 文字內容卡片 */
+  .content-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; display: none; }
+  .content-card.active { display: block; }
+  .card-toolbar { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 0.5px solid var(--border); background: #FAFAF8; }
+  .card-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+  .toolbar-actions { display: flex; gap: 8px; }
+  .icon-btn { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text-secondary); background: transparent; border: 0.5px solid var(--border); border-radius: 5px; padding: 4px 10px; cursor: pointer; transition: background 0.12s; font-family: 'Noto Sans TC', sans-serif; }
+  .icon-btn:hover { background: var(--tag-bg); }
+  .icon-btn svg { width: 13px; height: 13px; }
+  .content-body { padding: 1.5rem; font-size: 14px; line-height: 1.9; color: var(--text-primary); white-space: pre-wrap; word-break: break-word; min-height: 200px; }
+  .content-body.loading { color: var(--text-muted); font-style: italic; }
+  .card-footer { padding: 10px 16px; border-top: 0.5px solid var(--border); background: #FAFAF8; font-size: 11px; color: var(--text-muted); text-align: right; }
+
+  /* 講座資料提醒 — 行事曆卡片 */
+  .deadline-panel { display: none; flex-direction: column; gap: 16px; }
+  .deadline-panel.active { display: flex; }
+  .deadline-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .deadline-header { display: flex; align-items: center; gap: 14px; padding: 1.25rem 1.5rem; border-bottom: 0.5px solid var(--border); }
+  .deadline-date-box { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 10px; flex-shrink: 0; background: var(--deadline-bg); border: 1px solid var(--deadline-border); line-height: 1; }
+  .deadline-date-box .month { font-size: 9px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--deadline-text); margin-bottom: 2px; }
+  .deadline-date-box .day { font-size: 20px; font-weight: 500; color: var(--deadline-text); }
+  .deadline-meta { flex: 1; }
+  .deadline-title { font-size: 14px; font-weight: 500; color: var(--text-primary); margin-bottom: 2px; }
+  .deadline-subtitle { font-size: 12px; color: var(--text-muted); }
+  .deadline-body { padding: 1rem 1.5rem; font-size: 13px; line-height: 1.8; color: var(--text-secondary); }
+  .deadline-body p { margin-bottom: 0.4rem; }
+  .deadline-body p:last-child { margin-bottom: 0; }
+  .deadline-footer { padding: 12px 1.5rem; border-top: 0.5px solid var(--border); background: #FAFAF8; display: flex; gap: 8px; flex-wrap: wrap; }
+  .cal-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 6px; text-decoration: none; transition: opacity 0.15s; border: none; cursor: pointer; font-family: 'Noto Sans TC', sans-serif; }
+  .cal-btn.google { background: var(--cal-bg); color: var(--cal-text); border: 1px solid var(--cal-border); }
+  .cal-btn.ics { background: transparent; color: var(--text-secondary); border: 0.5px solid var(--border-strong); }
+  .cal-btn:hover { opacity: 0.75; }
+  .cal-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+  /* 行銷素材下載 */
+  .download-panel { display: none; flex-direction: column; align-items: flex-start; gap: 1rem; background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 2rem; }
   .download-panel.active { display: flex; }
   .download-panel-title { font-size: 15px; font-weight: 500; color: var(--text-primary); }
   .download-panel-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.75; }
-  .download-btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--text-primary); color: #fff;
-    font-size: 13px; font-weight: 500; padding: 10px 22px; border-radius: 6px;
-    text-decoration: none; transition: opacity 0.15s;
-    font-family: 'Noto Sans TC', sans-serif;
-  }
-  .download-btn:hover { opacity: 0.78; }
-
-  /* content card */
-  .content-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; display: none; }
-  .content-card.active { display: block; }
-  .card-toolbar {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 12px 16px; border-bottom: 0.5px solid var(--border); background: #FAFAF8;
-  }
-  .card-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
-  .toolbar-actions { display: flex; gap: 8px; }
-  .icon-btn {
-    display: inline-flex; align-items: center; gap: 5px;
-    font-size: 12px; color: var(--text-secondary);
-    background: transparent; border: 0.5px solid var(--border); border-radius: 5px;
-    padding: 4px 10px; cursor: pointer; transition: background 0.12s;
-    font-family: 'Noto Sans TC', sans-serif;
-  }
-  .icon-btn:hover { background: var(--tag-bg); }
-  .icon-btn svg { width: 13px; height: 13px; }
-  .content-body {
-    padding: 1.5rem; font-size: 14px; line-height: 1.9;
-    color: var(--text-primary); white-space: pre-wrap; word-break: break-word; min-height: 180px;
-  }
-  .content-body.loading { color: var(--text-muted); font-style: italic; }
-  .card-footer { padding: 10px 16px; border-top: 0.5px solid var(--border); background: #FAFAF8; font-size: 11px; color: var(--text-muted); text-align: right; }
+  .download-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--text-primary); color: #fff; font-size: 13px; font-weight: 500; padding: 10px 22px; border-radius: 6px; text-decoration: none; transition: opacity 0.15s; font-family: 'Noto Sans TC', sans-serif; }
+  .download-btn:hover { opacity: 0.8; }
 
   /* partners */
   .partners-wrap { max-width: 780px; margin: 0 auto; padding: 1rem 2rem 3rem; }
   .partners-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.75rem; }
   .partners-list { display: flex; flex-wrap: wrap; gap: 8px; }
-  .partner-chip {
-    font-size: 12px; color: var(--text-secondary); background: var(--surface);
-    border: 0.5px solid var(--border); padding: 5px 12px; border-radius: 20px;
-    text-decoration: none; transition: background 0.12s, border-color 0.12s;
-  }
-  a.partner-chip:hover { background: var(--accent-light); border-color: var(--border-strong); color: var(--text-primary); }
+  .partner-chip { font-size: 12px; color: var(--text-secondary); background: var(--surface); border: 0.5px solid var(--border); padding: 5px 12px; border-radius: 20px; text-decoration: none; transition: background 0.12s; }
+  a.partner-chip:hover { background: var(--accent-light); }
 
-  .toast {
-    position: fixed; bottom: 24px; left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    background: var(--text-primary); color: #fff;
-    font-size: 13px; padding: 10px 20px; border-radius: 8px;
-    opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s;
-    z-index: 999; font-family: 'Noto Sans TC', sans-serif;
-  }
+  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--text-primary); color: #fff; font-size: 13px; padding: 10px 20px; border-radius: 8px; opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; z-index: 999; font-family: 'Noto Sans TC', sans-serif; }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
   @media (max-width: 600px) {
-    .hero, .tabs-wrap, .content-wrap, .partners-wrap, .section-title { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .hero, .tabs-wrap, .content-wrap, .partners-wrap { padding-left: 1.25rem; padding-right: 1.25rem; }
     .topbar { padding: 0 1.25rem; }
     .hero { padding-top: 2.5rem; }
   }
@@ -178,7 +143,6 @@
 <section class="hero">
   <p class="hero-eyebrow">2026 AI TAIWAN 未來商務展 × 行銷實戰講座</p>
   <h1 class="hero-title"><span>解鎖 AI 行銷爆發力</span></h1>
-
   <div class="hero-meta">
     <span class="meta-tag">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M5 1.5v3M11 1.5v3M2 7h12"/></svg>
@@ -189,12 +153,11 @@
       圓山花博｜創新舞台
     </span>
     <span class="meta-tag">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path d="M2 12.5h12M4 12.5V6l4-4 4 4v6.5"/><rect x="6" y="9" width="4" height="3.5"/></svg>
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path d="M2 4h12v9H2zM2 4l6 5 6-5"/></svg>
       座位限量 50 個
     </span>
   </div>
-
-  <p class="hero-desc">6/24 活動我們已經開放報名本次活動，這次活動的宣傳素材，歡迎您自由分享於社群媒體、官網或邀請客戶參加。</p>
+  <p class="hero-desc">近一年來 AI 工具百花齊放，但真正給行銷人的實戰討論卻少得可憐。這場講座直接把答案帶到現場，不談理論，只看成效。</p>
   <a href="https://luma.com/l10jxmw3" target="_blank" class="btn-primary">
     活動報名網址
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
@@ -202,176 +165,131 @@
 </section>
 
 <hr class="divider">
-<p class="section-title">活動素材</p>
 
-<div class="tabs-wrap">
-  <div class="tabs">
-    <button class="tab-btn active" onclick="switchTab('slides', this)">講座資料提醒</button>
-    <button class="tab-btn" onclick="switchTab('zh', this)">活動資訊（中文）</button>
-    <button class="tab-btn" onclick="switchTab('en', this)">Event Detail</button>
-    <button class="tab-btn" onclick="switchTab('img', this)">行銷素材下載</button>
+<section id="content-section">
+  <div class="tabs-wrap">
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('zh', this)">活動資訊（中文）</button>
+      <button class="tab-btn" onclick="switchTab('en', this)">Event Detail</button>
+      <button class="tab-btn" onclick="switchTab('slides', this)">講座資料提醒</button>
+      <button class="tab-btn" onclick="switchTab('img', this)">行銷素材下載</button>
+    </div>
   </div>
-</div>
 
-<div class="content-wrap">
+  <div class="content-wrap">
 
-  <!-- 講座資料提醒 -->
-  <div id="panel-slides" style="display:flex; flex-direction:column; gap:16px;">
-
-    <style>
-      .deadline-card {
-        background: var(--surface);
-        border: 0.5px solid var(--border);
-        border-radius: 10px;
-        overflow: hidden;
-      }
-      .deadline-header {
-        display: flex; align-items: center; gap: 14px;
-        padding: 1.25rem 1.5rem;
-        border-bottom: 0.5px solid var(--border);
-      }
-      .deadline-date-box {
-        display: flex; flex-direction: column; align-items: center; justify-content: center;
-        width: 48px; height: 48px; border-radius: 10px; flex-shrink: 0;
-        background: var(--deadline-bg, #FFF8ED);
-        border: 1px solid var(--deadline-border, #F5D9A8);
-        line-height: 1;
-      }
-      .deadline-date-box .month { font-size: 9px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--deadline-text, #92500A); margin-bottom: 2px; }
-      .deadline-date-box .day { font-size: 20px; font-weight: 500; color: var(--deadline-text, #92500A); }
-      .deadline-meta { flex: 1; }
-      .deadline-title { font-size: 14px; font-weight: 500; color: var(--text-primary); margin-bottom: 2px; }
-      .deadline-subtitle { font-size: 12px; color: var(--text-muted); }
-      .deadline-body { padding: 1rem 1.5rem; font-size: 13px; line-height: 1.8; color: var(--text-secondary); }
-      .deadline-body p { margin-bottom: 0.4rem; }
-      .deadline-body p:last-child { margin-bottom: 0; }
-      .deadline-footer {
-        padding: 12px 1.5rem;
-        border-top: 0.5px solid var(--border);
-        background: #FAFAF8;
-        display: flex; gap: 8px; flex-wrap: wrap;
-      }
-      .cal-btn {
-        display: inline-flex; align-items: center; gap: 6px;
-        font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 6px;
-        text-decoration: none; transition: opacity 0.15s; border: none; cursor: pointer;
-        font-family: 'Noto Sans TC', sans-serif;
-      }
-      .cal-btn.google {
-        background: var(--cal-bg); color: var(--cal-text);
-        border: 1px solid var(--cal-border);
-      }
-      .cal-btn.ics {
-        background: transparent; color: var(--text-secondary);
-        border: 0.5px solid var(--border-strong);
-      }
-      .cal-btn:hover { opacity: 0.78; }
-      .cal-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
-    </style>
-
-    <!-- 截止日 1：影音同意 05/28 -->
-    <div class="deadline-card">
-      <div class="deadline-header">
-        <div class="deadline-date-box">
-          <span class="month">MAY</span>
-          <span class="day">28</span>
-        </div>
-        <div class="deadline-meta">
-          <p class="deadline-title">影音錄製與採訪同意</p>
-          <p class="deadline-subtitle">截止日：2026 年 5 月 28 日（四）</p>
+    <!-- 活動資訊中文：從 Doc 同步 -->
+    <div class="content-card active" id="panel-zh">
+      <div class="card-toolbar">
+        <span class="card-label">活動資訊（中文）</span>
+        <div class="toolbar-actions">
+          <button class="icon-btn" onclick="fetchDoc()">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13.5 8A5.5 5.5 0 1 1 8 2.5c1.8 0 3.4.87 4.4 2.2"/><path d="M10 5l3 0 0-3"/></svg>
+            重新整理
+          </button>
+          <button class="icon-btn" onclick="copyContent('zh')">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="8" height="9" rx="1"/><path d="M3 11V3a1 1 0 0 1 1-1h8"/></svg>
+            複製
+          </button>
         </div>
       </div>
-      <div class="deadline-body">
-        <p>本次活動將進行全程錄影，並預計於現場對各位講者進行 3–5 題簡短訪問。</p>
-        <p>相關影音素材將用於安石國際 YouTube 頻道及後續行銷用途。</p>
-        <p>請於截止日前回信告知是否同意授權使用。</p>
-      </div>
-      <div class="deadline-footer">
-        <a class="cal-btn google" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%BD%B1%E9%9F%B3%E9%8C%84%E8%A3%BD%E8%88%87%E6%8E%A1%E8%A8%AA%E5%90%8C%E6%84%8F%E5%9B%9E%E8%A6%86%E6%88%AA%E6%AD%A2%EF%BD%9CEnspyre+AI+TAIWAN+%E8%AC%9B%E5%BA%A7&dates=20260528T090000/20260528T093000&details=%E8%AB%8B%E5%9B%9E%E4%BF%A1%E6%98%AF%E5%90%A6%E5%90%8C%E6%84%8F%E5%BD%B1%E9%9F%B3%E6%8E%88%E6%AC%8A%E4%BD%BF%E7%94%A8%E3%80%82%0A%0A%E7%B4%A0%E6%9D%90%E5%B0%87%E7%94%A8%E6%96%BC%E5%AE%89%E7%9F%B3%E5%9C%8B%E9%9A%9B+YouTube+%E9%A0%BB%E9%81%93%E5%8F%8A%E5%BE%8C%E7%BA%8C%E8%A1%8C%E9%8A%B7%E7%94%A8%E9%80%94%E3%80%82%0A%0A%E8%81%AF%E7%B5%A1%EF%BC%9Ajennifer%40enspyre.com&location=%E5%9C%93%E5%B1%B1%E8%8A%B1%E5%8D%9A%7CAI+TAIWAN&sf=true&output=xml" target="_blank">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M5 1.5v3M11 1.5v3M2 7h12"/></svg>
-          加入 Google Calendar
-        </a>
-        <a class="cal-btn ics" href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0APRODID:-//Enspyre//AI+TAIWAN+2026//ZH%0ABEGIN:VEVENT%0ADTSTART:20260528T090000%0ADTEND:20260528T093000%0ASUMMARY:%E5%BD%B1%E9%9F%B3%E9%8C%84%E8%A3%BD%E8%88%87%E6%8E%A1%E8%A8%AA%E5%90%8C%E6%84%8F%E5%9B%9E%E8%A6%86%E6%88%AA%E6%AD%A2%EF%BD%9CEnspyre+AI+TAIWAN%0ADESCRIPTION:%E8%AB%8B%E5%9B%9E%E4%BF%A1%E6%98%AF%E5%90%A6%E5%90%8C%E6%84%8F%E5%BD%B1%E9%9F%B3%E6%8E%88%E6%AC%8A%E4%BD%BF%E7%94%A8%E3%80%82%E8%81%AF%E7%B5%A1%EF%BC%9Ajennifer%40enspyre.com%0ALOCATION:%E5%9C%93%E5%B1%B1%E8%8A%B1%E5%8D%9A%0AEND:VEVENT%0AEND:VCALENDAR" download="enspyre-consent-deadline.ics">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12h12"/></svg>
-          下載 .ics（Outlook / Apple）
-        </a>
-      </div>
+      <div class="content-body loading" id="content-zh">正在同步最新內容，請稍候...</div>
+      <div class="card-footer" id="updated-ts-zh"></div>
     </div>
 
-    <!-- 截止日 2：簡報提交 06/17 -->
-    <div class="deadline-card">
-      <div class="deadline-header">
-        <div class="deadline-date-box">
-          <span class="month">JUN</span>
-          <span class="day">17</span>
-        </div>
-        <div class="deadline-meta">
-          <p class="deadline-title">簡報提交</p>
-          <p class="deadline-subtitle">截止日：2026 年 6 月 17 日（三）</p>
+    <!-- Event Detail：從 Doc 同步 -->
+    <div class="content-card" id="panel-en">
+      <div class="card-toolbar">
+        <span class="card-label">Event Detail</span>
+        <div class="toolbar-actions">
+          <button class="icon-btn" onclick="fetchDoc()">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13.5 8A5.5 5.5 0 1 1 8 2.5c1.8 0 3.4.87 4.4 2.2"/><path d="M10 5l3 0 0-3"/></svg>
+            重新整理
+          </button>
+          <button class="icon-btn" onclick="copyContent('en')">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="8" height="9" rx="1"/><path d="M3 11V3a1 1 0 0 1 1-1h8"/></svg>
+            複製
+          </button>
         </div>
       </div>
-      <div class="deadline-body">
-        <p>請於截止日前提交簡報檔案。</p>
-        <p>格式：PPTX 或 Google Slides 均可。</p>
-        <p>寄送至：<a href="mailto:jennifer@enspyre.com" style="color:var(--text-primary);">jennifer@enspyre.com</a></p>
-      </div>
-      <div class="deadline-footer">
-        <a class="cal-btn google" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E7%B0%A1%E5%A0%B1%E6%8F%90%E4%BA%A4%E6%88%AA%E6%AD%A2%EF%BD%9CEnspyre+AI+TAIWAN+%E8%AC%9B%E5%BA%A7&dates=20260617T090000/20260617T093000&details=%E8%AB%8B%E6%8F%90%E4%BA%A4%E7%B0%A1%E5%A0%B1%E6%AA%94%E6%A1%88%EF%BC%88PPTX+%E6%88%96+Google+Slides%EF%BC%89%E8%87%B3+jennifer%40enspyre.com&location=%E5%9C%93%E5%B1%B1%E8%8A%B1%E5%8D%9A%7CAI+TAIWAN&sf=true&output=xml" target="_blank">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M5 1.5v3M11 1.5v3M2 7h12"/></svg>
-          加入 Google Calendar
-        </a>
-        <a class="cal-btn ics" href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0APRODID:-//Enspyre//AI+TAIWAN+2026//ZH%0ABEGIN:VEVENT%0ADTSTART:20260617T090000%0ADTEND:20260617T093000%0ASUMMARY:%E7%B0%A1%E5%A0%B1%E6%8F%90%E4%BA%A4%E6%88%AA%E6%AD%A2%EF%BD%9CEnspyre+AI+TAIWAN%0ADESCRIPTION:%E8%AB%8B%E6%8F%90%E4%BA%A4%E7%B0%A1%E5%A0%B1%E6%AA%94%E6%A1%88%EF%BC%88PPTX+%E6%88%96+Google+Slides%EF%BC%89%E8%87%B3+jennifer%40enspyre.com%0ALOCATION:%E5%9C%93%E5%B1%B1%E8%8A%B1%E5%8D%9A%0AEND:VEVENT%0AEND:VCALENDAR" download="enspyre-slides-deadline.ics">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12h12"/></svg>
-          下載 .ics（Outlook / Apple）
-        </a>
-      </div>
+      <div class="content-body loading" id="content-en">Syncing latest content...</div>
+      <div class="card-footer" id="updated-ts-en"></div>
     </div>
 
-    <div style="font-size:12px; color:var(--text-muted); padding: 0 0.25rem;">
-      如有疑問請聯繫 <a href="mailto:jennifer@enspyre.com" style="color:var(--text-secondary);">jennifer@enspyre.com</a>
-    </div>
-    <div class="card-footer" id="updated-ts" style="border:none; background:transparent; padding: 0 0.25rem; text-align:left;"></div>
-  </div>
+    <!-- 講座資料提醒：固定行事曆卡片 -->
+    <div class="deadline-panel" id="panel-slides">
 
-  <!-- 活動資訊中文 -->
-  <div class="content-card" id="panel-zh">
-    <div class="card-toolbar">
-      <span class="card-label">活動資訊（中文）</span>
-      <div class="toolbar-actions">
-        <button class="icon-btn" onclick="copyContent('zh')">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="8" height="9" rx="1"/><path d="M3 11V3a1 1 0 0 1 1-1h8"/></svg>
-          複製
-        </button>
+      <div class="deadline-card">
+        <div class="deadline-header">
+          <div class="deadline-date-box">
+            <span class="month">MAY</span>
+            <span class="day">28</span>
+          </div>
+          <div class="deadline-meta">
+            <p class="deadline-title">影音錄製與採訪同意</p>
+            <p class="deadline-subtitle">截止日：2026 年 6 月 1 日（一）</p>
+          </div>
+        </div>
+        <div class="deadline-body">
+          <p>本次活動將進行全程錄影，並預計於現場對各位講者進行 3–5 題簡短訪問。</p>
+          <p>相關影音素材將用於安石國際 YouTube 頻道及後續行銷用途。</p>
+          <p>請於截止日前回信告知是否同意授權使用。</p>
+        </div>
+        <div class="deadline-footer">
+          <a class="cal-btn google" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%BD%B1%E9%9F%B3%E9%8C%84%E8%A3%BD%E8%88%87%E6%8E%A1%E8%A8%AA%E5%90%8C%E6%84%8F%E5%9B%9E%E8%A6%86%E6%88%AA%E6%AD%A2%EF%BD%9CEnspyre+AI+TAIWAN&dates=20260528T090000/20260528T093000&details=%E8%AB%8B%E5%9B%9E%E4%BF%A1%E6%98%AF%E5%90%A6%E5%90%8C%E6%84%8F%E5%BD%B1%E9%9F%B3%E6%8E%88%E6%AC%8A%E4%BD%BF%E7%94%A8%E3%80%82%0A%E8%81%AF%E7%B5%A1%EF%BC%9Ajennifer%40enspyre.com&sf=true&output=xml" target="_blank">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M5 1.5v3M11 1.5v3M2 7h12"/></svg>
+            加入 Google Calendar
+          </a>
+          <a class="cal-btn ics" href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0APRODID:-//Enspyre//AITAIWAN2026//ZH%0ABEGIN:VEVENT%0ADTSTART:20260528T090000%0ADTEND:20260528T093000%0ASUMMARY:%E5%BD%B1%E9%9F%B3%E5%90%8C%E6%84%8F%E5%9B%9E%E8%A6%86%E6%88%AA%E6%AD%A2%7CEnspyre%0ADESCRIPTION:%E8%AB%8B%E5%9B%9E%E4%BF%A1%E6%98%AF%E5%90%A6%E5%90%8C%E6%84%8F%E5%BD%B1%E9%9F%B3%E6%8E%88%E6%AC%8A%E3%80%82jennifer%40enspyre.com%0AEND:VEVENT%0AEND:VCALENDAR" download="consent-deadline.ics">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12h12"/></svg>
+            下載 .ics（Outlook / Apple）
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="content-body" id="content-zh"></div>
-  </div>
 
-  <!-- Event Detail -->
-  <div class="content-card" id="panel-en">
-    <div class="card-toolbar">
-      <span class="card-label">Event Detail</span>
-      <div class="toolbar-actions">
-        <button class="icon-btn" onclick="copyContent('en')">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="8" height="9" rx="1"/><path d="M3 11V3a1 1 0 0 1 1-1h8"/></svg>
-          Copy
-        </button>
+      <div class="deadline-card">
+        <div class="deadline-header">
+          <div class="deadline-date-box">
+            <span class="month">JUN</span>
+            <span class="day">17</span>
+          </div>
+          <div class="deadline-meta">
+            <p class="deadline-title">簡報提交</p>
+            <p class="deadline-subtitle">截止日：2026 年 6 月 17 日（三）</p>
+          </div>
+        </div>
+        <div class="deadline-body">
+          <p>請於截止日前提交簡報檔案。</p>
+          <p>格式：PPTX 或 Google Slides 均可。</p>
+          <p>寄送至：<a href="mailto:jennifer@enspyre.com" style="color:var(--text-primary);">jennifer@enspyre.com</a></p>
+        </div>
+        <div class="deadline-footer">
+          <a class="cal-btn google" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E7%B0%A1%E5%A0%B1%E6%8F%90%E4%BA%A4%E6%88%AA%E6%AD%A2%EF%BD%9CEnspyre+AI+TAIWAN&dates=20260617T090000/20260617T093000&details=%E8%AB%8B%E6%8F%90%E4%BA%A4%E7%B0%A1%E5%A0%B1%E6%AA%94%E6%A1%88%EF%BC%88PPTX+%E6%88%96+Google+Slides%EF%BC%89%E8%87%B3+jennifer%40enspyre.com&sf=true&output=xml" target="_blank">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M5 1.5v3M11 1.5v3M2 7h12"/></svg>
+            加入 Google Calendar
+          </a>
+          <a class="cal-btn ics" href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0APRODID:-//Enspyre//AITAIWAN2026//ZH%0ABEGIN:VEVENT%0ADTSTART:20260617T090000%0ADTEND:20260617T093000%0ASUMMARY:%E7%B0%A1%E5%A0%B1%E6%8F%90%E4%BA%A4%E6%88%AA%E6%AD%A2%7CEnspyre%0ADESCRIPTION:%E8%AB%8B%E6%8F%90%E4%BA%A4PPTX%E6%88%96Google+Slides%E8%87%B3jennifer%40enspyre.com%0AEND:VEVENT%0AEND:VCALENDAR" download="slides-deadline.ics">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12h12"/></svg>
+            下載 .ics（Outlook / Apple）
+          </a>
+        </div>
       </div>
+
+      <p style="font-size:12px; color:var(--text-muted);">如有疑問請聯繫 <a href="mailto:jennifer@enspyre.com" style="color:var(--text-secondary);">jennifer@enspyre.com</a></p>
     </div>
-    <div class="content-body" id="content-en"></div>
-  </div>
 
-  <!-- 行銷素材下載 -->
-  <div class="download-panel" id="panel-img">
-    <p class="download-panel-title">行銷圖片素材下載</p>
-    <p class="download-panel-desc">以下為本次活動官方視覺素材，供合作夥伴社群發文使用。</p>
-    <a href="https://drive.google.com/drive/folders/1-V3AJo7oBT7SBn5_jn4iF-32rWseGN_Y?usp=drive_link" target="_blank" class="download-btn">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12h12"/></svg>
-      前往素材資料夾
-    </a>
-  </div>
+    <!-- 行銷素材下載：固定按鈕 -->
+    <div class="download-panel" id="panel-img">
+      <p class="download-panel-title">行銷圖片素材下載</p>
+      <p class="download-panel-desc">以下為本次活動官方視覺素材，供合作夥伴社群發文使用。請勿自行修改品牌元素與字體配置。</p>
+      <a href="https://drive.google.com/drive/folders/1-V3AJo7oBT7SBn5_jn4iF-32rWseGN_Y?usp=drive_link" target="_blank" class="download-btn">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12h12"/></svg>
+        前往素材資料夾
+      </a>
+    </div>
 
-</div>
+  </div>
+</section>
 
 <hr class="divider">
 
@@ -392,95 +310,66 @@
 <script>
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbycE4UrT6bvhFytbKHzJZy0W6KD20EOKYiLI3BqLTnKNh0-9axUK8BEDnJ3dgiDlqoKPg/exec';
 
+// 本地備份內容
 const DEFAULT = {
-  slides: `講座資料將於活動結束後提供給與會者。\n\n如有需要提前確認議程或講者資料，請聯繫安石國際團隊。\n\n議程公開時間：2026 年 6 月第三週\n\n聯繫方式：請洽安石國際官方聯絡信箱`,
-  zh: `解鎖 AI 行銷爆發力｜Leverage AI in Marketing
-AI 行銷實戰：靈感加速，放大成效
-
-📅 2026 年 6 月 24 日（三）10:30–12:00 
-📍 圓山花博｜2026 AI TAIWAN 未來商務展・創新舞台
-📍活動報名網址: https://luma.com/l10jxmw3 
-
-↘活動簡介
-在 AI 工具百花齊放的時代，行銷人面臨的挑戰不是「要不要用 AI」，而是「怎麼用才真的有效」。
-本場講座由 Enspyre 安石國際主辦，邀請 Google Cloud、LinkedIn、GAIA 蓋亞資訊和 Tagtoo 塔圖科技共襄盛舉，透過「平台工具應用」、「企業實戰案例」與「市場開發策略」三大視角，帶領行銷人從不同維度理解 AI 在行銷中的真實價值。
-講座中分享如何運用 AI 精準觸及目標受眾、提升內容產出效率，並將數據洞察轉化為可執行的市場行動。
-我們希望每一位與會者在活動結束後，有明確的下一步，回去立即開始行動！
-
-↘誰適合參加這場活動
-
-• 行銷主管、品牌經理、新創創辦人與產品負責人
-• 任何對 AI 行銷感興趣、並希望從實戰案例獲得啟發的人
-
-↘參加亮點 
-
-• 從企業 LLM、市場開發策略到數位廣告，一場掌握全局
-• 真實案例分享，講者分享各自的經驗與數據，不談理論只看成效
-• 專家問答：帶著問題來，帶著答案走，直接向專家提問
-
-  en: `
-Leverage AI in Marketing
-AI in Action: From Spark to Scale 
-
-📅 Wednesday, June 24, 2026 | 10:30–12:00
-📍 Yuanshan Expo Park | 2026 AI TAIWAN· Innovation Stage
-📍Sign-up link: https://luma.com/l10jxmw3 
-
-↘Event Description
-In an era of rapidly expanding AI tools, the real question for marketers is no longer whether to use AI, it's how to use it effectively.
-This event is presented by Enspyre, featuring speakers from Google Cloud, LinkedIn, GAIA Information and Tagtoo. We will explore AI-powered marketing through three lenses: platform tools, real-world cases, and market strategy. 
-Speakers will share how to use AI to reach the right audience with precision, improve content efficiency, and turn data insights into actionable market moves.
-Our goal is simple: every attendee walks away with a clear next step — not just inspiration, but a method they can put to work immediately.
-
-↘Who Should Attend 
-• Marketing Directors, Brand Managers, Startup Founders or Product Owners
-• Anyone who is curious about AI Marketing and real-world case studies
-
-↘Why Attend
-​• From enterprise LLM and LinkedIn AI tools to market development strategy
-​• Real cases, real data: speaker shares real experience, no theory, just results
-​• Open FAQ with experts: Bring your questions, leave with answers.
-
- 
+  zh: `解鎖 AI 行銷爆發力｜行銷實戰講座 × AI TAIWAN\n\n安石國際很榮幸主辦這場行銷實戰講座，邀請 Google Cloud、LinkedIn、GAIA 蓋亞資訊與 Tagtoo 塔圖科技一同展開精采分享。\n\n近一年來 AI 工具百花齊放，但真正給行銷人的實戰討論卻少得可憐。如果你正在思考 AI 如何真正落地到行銷與市場開發流程，這場講座直接給你答案。\n\n本場講座，將從三個維度拆解 AI 行銷真實應用：\n🛠️ 平台工具怎麼選，哪些真的有效\n📊 企業實戰案例，講者親身操盤的數據與做法\n🚀 市場開發策略，以 AI 精準觸及對的決策者\n\n不談理論，只看成效。最後有專家問答，歡迎你帶著問題來，帶著答案走。\n\n📅 2026 年 6 月 24 日（三）10:30–12:00\n📍 圓山花博｜2026 AI TAIWAN 未來商務展・創新舞台\n🎟️ 座位限量 50 個\n👉 活動報名網址 https://luma.com/l10jxmw3`,
+  en: `🎯 Leverage AI in Marketing — Real-World Seminar × AI TAIWAN\nJune 24 ▮ https://luma.com/l10jxmw3\n\nEnspyre is proud to host this hands-on marketing seminar, bringing together practitioners from Google Cloud, LinkedIn, GAIA Information, and Tagtoo.\n\nNo theory. Only results. We close with an open FAQ — bring your questions, leave with answers.\n\n📅 Wednesday, June 24, 2026 | 10:30 a.m. – 12:00 p.m.\n📍 Yuanshan Expo Park | 2026 AI TAIWAN Future Business Expo, Innovation Stage\n🎟️ Only 50 seats available.\n\n👉 Register today https://luma.com/l10jxmw3`
 };
 
-let current = 'slides';
+let currentTab = 'zh';
 
 function switchTab(tab, btn) {
-  current = tab;
+  currentTab = tab;
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   if (btn) btn.classList.add('active');
 
-  // slides panel uses flex, others use block via .active class
-  const slidesPanel = document.getElementById('panel-slides');
-  slidesPanel.style.display = (tab === 'slides') ? 'flex' : 'none';
-
-  ['zh','en'].forEach(t => {
-    const el = document.getElementById('panel-' + t);
-    if (el) el.classList.toggle('active', t === tab);
+  // 文字卡片
+  ['zh', 'en'].forEach(t => {
+    document.getElementById('panel-' + t).classList.toggle('active', t === tab);
   });
-  const imgPanel = document.getElementById('panel-img');
-  if (imgPanel) imgPanel.classList.toggle('active', tab === 'img');
+  // 講座資料提醒
+  document.getElementById('panel-slides').classList.toggle('active', tab === 'slides');
+  // 行銷素材下載
+  document.getElementById('panel-img').classList.toggle('active', tab === 'img');
 }
 
 async function fetchDoc() {
-  const tsEl = document.getElementById('updated-ts');
+  const elZh = document.getElementById('content-zh');
+  const elEn = document.getElementById('content-en');
+  const tsZh = document.getElementById('updated-ts-zh');
+  const tsEn = document.getElementById('updated-ts-en');
+
+  elZh.classList.add('loading');
+  elZh.textContent = '正在同步最新內容，請稍候...';
+  elEn.classList.add('loading');
+  elEn.textContent = 'Syncing latest content...';
+
   try {
     const res = await fetch(SCRIPT_URL);
     const data = await res.json();
-    const sections = (data.content || '').split('---');
-    const zh = document.getElementById('content-zh');
-    const en = document.getElementById('content-en');
-    if (zh) zh.textContent = (sections[0] || '').trim() || DEFAULT.zh;
-    if (en) en.textContent = (sections[1] || '').trim() || DEFAULT.en;
+    const raw = data.content || '';
+
+    // 用 --- 切成兩段，第一段中文，第二段英文
+    const parts = raw.split(/\n\s*---\s*\n/);
+    const zhContent = (parts[0] || '').trim();
+    const enContent = (parts[1] || '').trim();
+
+    elZh.classList.remove('loading');
+    elEn.classList.remove('loading');
+    elZh.textContent = zhContent || DEFAULT.zh;
+    elEn.textContent = enContent || DEFAULT.en;
+
     const t = new Date(data.updated);
-    if (tsEl) tsEl.textContent = '最後同步：' + t.toLocaleString('zh-TW');
+    const ts = '最後同步：' + t.toLocaleString('zh-TW');
+    tsZh.textContent = ts;
+    tsEn.textContent = ts;
   } catch(e) {
-    const zh = document.getElementById('content-zh');
-    const en = document.getElementById('content-en');
-    if (zh) zh.textContent = DEFAULT.zh;
-    if (en) en.textContent = DEFAULT.en;
-    if (tsEl) tsEl.textContent = '使用本地快取版本';
+    elZh.classList.remove('loading');
+    elEn.classList.remove('loading');
+    elZh.textContent = DEFAULT.zh;
+    elEn.textContent = DEFAULT.en;
+    tsZh.textContent = '使用本地快取版本';
+    tsEn.textContent = '使用本地快取版本';
   }
 }
 
