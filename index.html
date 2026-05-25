@@ -23,9 +23,6 @@
     --success-bg: #EAF5EE;
     --success-text: #1A6B35;
     --tag-bg: #EDEBE6;
-    --reg-bg: #FFF8ED;
-    --reg-text: #92500A;
-    --reg-border: #F5D9A8;
     --cal-bg: #F0F5FF;
     --cal-border: #D6E4FF;
     --cal-text: #1D3FAA;
@@ -70,25 +67,6 @@
     font-size: 12px; background: var(--tag-bg); color: var(--text-secondary);
     padding: 5px 12px; border-radius: 20px; display: flex; align-items: center; gap: 5px;
   }
-
-  /* registration pill */
-  .reg-pill {
-    display: flex; align-items: center; gap: 8px;
-    background: var(--reg-bg); border: 1px solid var(--reg-border);
-    padding: 5px 14px; border-radius: 20px; cursor: default;
-  }
-  .reg-pill-dot {
-    width: 28px; height: 28px; border-radius: 50%;
-    background: var(--reg-text); color: #fff;
-    font-size: 11px; font-weight: 500;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; line-height: 1;
-    transition: transform 0.3s;
-  }
-  .reg-pill-dot.updated { transform: scale(1.15); }
-  .reg-pill-text { display: flex; flex-direction: column; gap: 1px; }
-  .reg-pill-count { font-size: 13px; font-weight: 500; color: var(--reg-text); line-height: 1.2; }
-  .reg-pill-label { font-size: 10px; color: var(--reg-text); opacity: 0.75; }
 
   .hero-desc { font-size: 15px; color: var(--text-secondary); max-width: 560px; line-height: 1.8; margin-bottom: 2rem; }
   .btn-primary {
@@ -214,17 +192,9 @@
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path d="M2 12.5h12M4 12.5V6l4-4 4 4v6.5"/><rect x="6" y="9" width="4" height="3.5"/></svg>
       座位限量 50 個
     </span>
-    <!-- 報名人數 pill -->
-    <div class="reg-pill" title="報名人數即時更新">
-      <div class="reg-pill-dot" id="reg-circle">—</div>
-      <div class="reg-pill-text">
-        <span class="reg-pill-count" id="reg-count">同步中</span>
-        <span class="reg-pill-label">已報名人數</span>
-      </div>
-    </div>
   </div>
 
-  <p class="hero-desc">近一年來 AI 工具百花齊放，但真正給行銷人的實戰討論卻少得可憐。這場講座直接把答案帶到現場，不談理論，只看成效。</p>
+  <p class="hero-desc">6/24 活動我們已經開放報名本次活動，這次活動的宣傳素材，歡迎您自由分享於社群媒體、官網或邀請客戶參加。</p>
   <a href="https://luma.com/l10jxmw3" target="_blank" class="btn-primary">
     活動報名網址
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
@@ -447,38 +417,16 @@ function switchTab(tab, btn) {
   if (imgPanel) imgPanel.classList.toggle('active', tab === 'img');
 }
 
-function updateRegPill(text) {
-  const circle = document.getElementById('reg-circle');
-  const count = document.getElementById('reg-count');
-  if (!text) { circle.textContent = '—'; count.textContent = '同步中'; return; }
-  const numMatch = text.match(/(\d+)/);
-  if (numMatch) {
-    const n = parseInt(numMatch[1]);
-    circle.textContent = n;
-    count.textContent = n + ' / 50 人';
-    circle.classList.add('updated');
-    setTimeout(() => circle.classList.remove('updated'), 600);
-  } else {
-    circle.textContent = '—';
-    count.textContent = '查看報名頁';
-  }
-}
-
 async function fetchDoc() {
   const tsEl = document.getElementById('updated-ts');
   try {
     const res = await fetch(SCRIPT_URL);
     const data = await res.json();
-
-    // s1 = 講座資料提醒（slides tab 是行事曆卡片，不顯示 Doc 內容，略過）
-    // s2 = 活動資訊中文, s3 = Event Detail, s4 = 報名人數
+    const sections = (data.content || '').split('---');
     const zh = document.getElementById('content-zh');
     const en = document.getElementById('content-en');
-    if (zh) zh.textContent = data.s2 || DEFAULT.zh;
-    if (en) en.textContent = data.s3 || DEFAULT.en;
-
-    updateRegPill(data.s4 || '');
-
+    if (zh) zh.textContent = (sections[0] || '').trim() || DEFAULT.zh;
+    if (en) en.textContent = (sections[1] || '').trim() || DEFAULT.en;
     const t = new Date(data.updated);
     if (tsEl) tsEl.textContent = '最後同步：' + t.toLocaleString('zh-TW');
   } catch(e) {
@@ -486,7 +434,6 @@ async function fetchDoc() {
     const en = document.getElementById('content-en');
     if (zh) zh.textContent = DEFAULT.zh;
     if (en) en.textContent = DEFAULT.en;
-    updateRegPill('');
     if (tsEl) tsEl.textContent = '使用本地快取版本';
   }
 }
