@@ -238,7 +238,7 @@
           <p>請於截止日前回信告知是否同意授權使用。</p>
         </div>
         <div class="deadline-footer">
-          <a class="cal-btn google" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%BD%B1%E9%9F%B3%E9%8C%84%E8%A3%BD%E8%88%87%E6%8E%A1%E8%A8%AA%E5%90%8C%E6%84%8F%E5%9B%9E%E8%A6%86%E6%88%AA%E6%AD%A2%EF%BD%9CEnspyre+AI+TAIWAN&dates=20260528T090000/20260528T093000&details=%E8%AB%8B%E5%9B%9E%E4%BF%A1%E6%98%AF%E5%90%A6%E5%90%8C%E6%84%8F%E5%BD%B1%E9%9F%B3%E6%8E%88%E6%AC%8A%E4%BD%BF%E7%94%A8%E3%80%82%0A%E8%81%AF%E7%B5%A1%EF%BC%9Ajennifer%40enspyre.com&sf=true&output=xml" target="_blank">
+          <a class="cal-btn google" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%BD%B1%E9%9F%B3%E9%8C%84%E8%A3%BD%E8%88%87%E6%8E%A1%E8%A8%AA%E5%90%8C%E6%84%8F%E5%9B%9E%E8%A6%86%E6%88%AA%E6%AD%A2%EF%BD%9CEnspyre+AI+TAIWAN&dates=20260601T090000/20260601T093000&details=%E8%AB%8B%E5%9B%9E%E4%BF%A1%E6%98%AF%E5%90%A6%E5%90%8C%E6%84%8F%E5%BD%B1%E9%9F%B3%E6%8E%88%E6%AC%8A%E4%BD%BF%E7%94%A8%E3%80%82%0A%E8%81%AF%E7%B5%A1%EF%BC%9Ajennifer%40enspyre.com&sf=true&output=xml" target="_blank">
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M5 1.5v3M11 1.5v3M2 7h12"/></svg>
             加入 Google Calendar
           </a>
@@ -298,7 +298,7 @@
 <div class="partners-wrap">
   <p class="partners-label">主辦與共同參與</p>
   <div class="partners-list">
-    <span class="partner-chip">Enspyre 安石國際</span>
+    <a href="https://www.enspyre.com/" target="_blank" class="partner-chip">Enspyre 安石國際 ↗</a>
     <span class="partner-chip">Google Cloud</span>
     <span class="partner-chip">LinkedIn</span>
     <a href="https://www.gaia.net/" target="_blank" class="partner-chip">GAIA 蓋亞資訊 ↗</a>
@@ -310,12 +310,52 @@
 <div class="toast" id="toast">已複製到剪貼簿</div>
 
 <script>
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbycE4UrT6bvhFytbKHzJZy0W6KD20EOKYiLI3BqLTnKNh0-9axUK8BEDnJ3dgiDlqoKPg/exec';
-
+ 
 // 本地備份內容
 const DEFAULT = {
-  zh: `解鎖 AI 行銷爆發力｜行銷實戰講座 × AI TAIWAN\n\n安石國際很榮幸主辦這場行銷實戰講座，邀請 Google Cloud、LinkedIn、GAIA 蓋亞資訊與 Tagtoo 塔圖科技一同展開精采分享。\n\n近一年來 AI 工具百花齊放，但真正給行銷人的實戰討論卻少得可憐。如果你正在思考 AI 如何真正落地到行銷與市場開發流程，這場講座直接給你答案。\n\n本場講座，將從三個維度拆解 AI 行銷真實應用：\n🛠️ 平台工具怎麼選，哪些真的有效\n📊 企業實戰案例，講者親身操盤的數據與做法\n🚀 市場開發策略，以 AI 精準觸及對的決策者\n\n不談理論，只看成效。最後有專家問答，歡迎你帶著問題來，帶著答案走。\n\n📅 2026 年 6 月 24 日（三）10:30–12:00\n📍 圓山花博｜2026 AI TAIWAN 未來商務展・創新舞台\n🎟️ 座位限量 50 個\n👉 活動報名網址 https://luma.com/l10jxmw3`,
-  en: `🎯 Leverage AI in Marketing — Real-World Seminar × AI TAIWAN\nJune 24 ▮ https://luma.com/l10jxmw3\n\nEnspyre is proud to host this hands-on marketing seminar, bringing together practitioners from Google Cloud, LinkedIn, GAIA Information, and Tagtoo.\n\nNo theory. Only results. We close with an open FAQ — bring your questions, leave with answers.\n\n📅 Wednesday, June 24, 2026 | 10:30 a.m. – 12:00 p.m.\n📍 Yuanshan Expo Park | 2026 AI TAIWAN Future Business Expo, Innovation Stage\n🎟️ Only 50 seats available.\n\n👉 Register today https://luma.com/l10jxmw3`
+  zh: `🎯解鎖 AI 行銷爆發力 行銷實戰講座 × AI TAIWAN
+6 月 24 日  https://luma.com/l10jxmw3
+
+安石國際很榮幸主辦這場行銷實戰講座，邀請 Google Cloud、LinkedIn、GAIA 蓋亞資訊與 Tagtoo 塔圖科技 一同展開精采分享。
+
+近一年來 AI 工具百花齊放，但真正給行銷人的實戰討論卻相對得少。
+如果你正在思考 AI 如何真正落地到行銷與市場開發流程，這場講座直接給你答案。
+
+本場講座，將從三個維度拆解 AI 行銷真實應用：
+
+🛠️ 平台工具怎麼選，哪些真的有效
+📊 企業實戰案例，講者親身操盤的數據與做法
+🚀 市場開發策略，以 AI 精準觸及對的決策者
+
+不談理論，只看成效。
+最後有專家問答，歡迎你帶著問題來，帶著答案走。
+
+📅 2026 年 6 月 24 日（三）10:30–12:00
+📍 圓山花博｜2026 AI TAIWAN 未來商務展・創新舞台
+🎟️ 座位限量 50 個，議程下週公開，搶先卡位
+👉 立即報名 https://luma.com/l10jxmw3
+
+主辦 & 共同參與
+Enspyre 安石國際 × Google Cloud × LinkedIn × GAIA 蓋亞資訊 × Tagtoo 塔圖科技 x 
+特別感謝：數位時代
+
+ en: ` 🎯 Leverage AI in Marketing at AI TAIWAN — June 24 
+▮ Reserve your seat! https://luma.com/l10jxmw3
+
+
+There are plenty of gatherings on building products with AI. Practical, hands-on conversations built for marketers are still rare.
+
+This session is hosted by Enspyre, together with Google Cloud, LinkedIn, GAIA Information, and Tagtoo, covering:
+
+🛠️ Platform tool selection — which AI tools actually move the needle
+📊 Real enterprise cases — how companies are running AI-powered campaigns today
+🚀 Market development strategy — using AI to reach the right buyers, faster
+Every speaker brings their own data and lived experience. No frameworks pulled from textbooks.
+There's also an open FAQ at the end — bring your questions, leave with answers.
+Sign up today 👉 https://luma.com/l10jxmw3
+
+
+ `
 };
 
 let currentTab = 'zh';
