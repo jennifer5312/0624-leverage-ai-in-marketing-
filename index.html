@@ -447,17 +447,11 @@ function switchTab(tab, btn) {
   if (imgPanel) imgPanel.classList.toggle('active', tab === 'img');
 }
 
-function parseSection(raw, key) {
-  const regex = new RegExp('\\[' + key + '\\]([\\s\\S]*?)(?=\\[|$)', 'i');
-  const m = raw.match(regex);
-  return m ? m[1].trim() : '';
-}
-
 function updateRegPill(text) {
-  if (!text) return;
-  const numMatch = text.match(/(\d+)/);
   const circle = document.getElementById('reg-circle');
   const count = document.getElementById('reg-count');
+  if (!text) { circle.textContent = '—'; count.textContent = '同步中'; return; }
+  const numMatch = text.match(/(\d+)/);
   if (numMatch) {
     const n = parseInt(numMatch[1]);
     circle.textContent = n;
@@ -472,37 +466,28 @@ function updateRegPill(text) {
 
 async function fetchDoc() {
   const tsEl = document.getElementById('updated-ts');
-  document.getElementById('content-slides').classList.add('loading');
-  document.getElementById('content-slides').textContent = '正在同步最新內容...';
   try {
     const res = await fetch(SCRIPT_URL);
     const data = await res.json();
-    const raw = data.content || '';
 
-    const sections = {
-      slides: parseSection(raw, '講座資料提醒'),
-      zh: parseSection(raw, '活動資訊'),
-      en: parseSection(raw, 'Event Detail'),
-      reg: parseSection(raw, '報名人數更新')
-    };
+    // s1 = 講座資料提醒（slides tab 是行事曆卡片，不顯示 Doc 內容，略過）
+    // s2 = 活動資訊中文, s3 = Event Detail, s4 = 報名人數
+    const zh = document.getElementById('content-zh');
+    const en = document.getElementById('content-en');
+    if (zh) zh.textContent = data.s2 || DEFAULT.zh;
+    if (en) en.textContent = data.s3 || DEFAULT.en;
 
-    ['slides','zh','en'].forEach(k => {
-      const el = document.getElementById('content-' + k);
-      if (el) { el.classList.remove('loading'); el.textContent = sections[k] || DEFAULT[k]; }
-    });
-
-    updateRegPill(sections.reg);
+    updateRegPill(data.s4 || '');
 
     const t = new Date(data.updated);
-    tsEl.textContent = '最後同步：' + t.toLocaleString('zh-TW');
+    if (tsEl) tsEl.textContent = '最後同步：' + t.toLocaleString('zh-TW');
   } catch(e) {
-    ['slides','zh','en'].forEach(k => {
-      const el = document.getElementById('content-' + k);
-      if (el) { el.classList.remove('loading'); el.textContent = DEFAULT[k]; }
-    });
-    document.getElementById('reg-circle').textContent = '—';
-    document.getElementById('reg-count').textContent = '無法同步';
-    tsEl.textContent = '使用本地快取版本';
+    const zh = document.getElementById('content-zh');
+    const en = document.getElementById('content-en');
+    if (zh) zh.textContent = DEFAULT.zh;
+    if (en) en.textContent = DEFAULT.en;
+    updateRegPill('');
+    if (tsEl) tsEl.textContent = '使用本地快取版本';
   }
 }
 
